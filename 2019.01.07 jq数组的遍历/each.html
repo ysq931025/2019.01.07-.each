@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<script type="text/javascript" src='jquery-1.11.3.min.js'></script>
+	<title>Document</title>
+</head>
+<body>
+<input name="aaa" type="hidden" value="111" />
+<input name="bbb" type="hidden" value="222" />
+<input name="ccc" type="hidden" value="333" />
+<input name="ddd" type="hidden" value="444"/>
+</body>
+<script type="text/javascript">
+// 1.遍历一维数组
+	var arr=['aa','bb','cc','dd'];
+	$.each(arr,function(index,obj){
+		console.log(index+'-'+obj)
+	})
+	// 2.遍历二维数组
+// 	var arr1=[['aaa','bbb'],['ccc','ddd'],['eee','fff']]
+// 	$.each(arr1,function(indexa,obja){
+// 		console.log(indexa+'-'+obja)
+// 		// 再进一步对每一个数组进行遍历
+// 		$.each(obja,function(indexb,objb){
+// 			console.log(indexb+'-'+objb)
+// 		})
+// 	})
+// 3.对于后台返回json字符串的处理
+// var  json={key1:'aa',key2:'bb'}
+// $.each(json,function(key,value){
+// 	console.log(key+'-'+value)
+// })
+// 4.对于后台返回字符串中有对象的时候
+// var arr2=[{name:'n1',age:18},{name:'n2',age:20},{name:'n3',age:22}];
+// $.each(arr2,function(indexc,objc){
+// 	console.log(indexc+'-'+objc)
+// 	console.log(objc.name);
+// 	console.log(objc["name"]);
+// 	console.log(objc.age)
+// 	console.log(objc["age"]);
+// $.each(objc,function(keya,valuea){
+// 	console.log(keya+'-'+valuea)
+// })
+// })
+// 5.对于dom元素的遍历
+// $.each($('input:hidden'),function(indexd,objd){
+// 	console.log(indexd+'-'+objd);
+// 	console.log(objd.value)
+// })
+// 另外一种写法的遍历
+// $('input:hidden').each(function(indexe,obje){
+// 	console.log(indexe+'-'+obje)
+// })
+// $(arr2).each(function(indexf,objf){
+// 	console.log(indexf+'-'+objf)
+// 	console.log(objf.name)
+// 	console.log(objf.age)
+// })
+</script>
+	
+</html>
