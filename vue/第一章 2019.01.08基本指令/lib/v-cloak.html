@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+	<title>v-cloak</title>
+	<style type="text/css">
+		[v-cloak]{
+			/*display: none;*/
+		}
+	</style>
+</head>
+<body>
+	<div id='app'>
+		<!--v-cloak用来解决插值表达式闪烁问题-->
+		<p v-cloak>++++{{msg}}----</p>
+		<!--v-text默认没有闪烁问题，但是回覆盖原标签内所有的东西-->
+		<p  v-text="msg1">++++</p>
+		<!--v-html会把数据按照标签的形式返回到页面，也会覆盖标签中的全部内容-->
+		<p v-html="msg1">++++++</p>
+		
+	</div>
+</body>
+<script>
+	new Vue({
+		el:'#app',
+		data:{
+			msg:'v-cloak',
+			msg1:'<h1>这是标题</h1>'
+			
+		}
+	})
+</script>
+</html>

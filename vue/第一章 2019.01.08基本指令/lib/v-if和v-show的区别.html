@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+		<title>v-if和v-show的区别</title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" value="控制" @click="look" />
+			<!--v-if每次都会重新创建或者删除元素 有较高的切换性消耗-->
+			<!--v-show只控制显示隐藏display：none，display：block 有较高的渲染消耗 -->
+			<!--如果平凡切换使用v-show-->
+			
+			<p v-if="flag">你现在能看到我么</p>
+			<p v-show="flag">你现在能看到我么</p>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				flag:true
+			},
+			methods:{
+				look(){
+					this.flag=!this.flag
+				}
+			}
+		})
+	</script>
+</html>

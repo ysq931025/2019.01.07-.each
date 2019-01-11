@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+		<title>练习</title>
+		<style type="text/css">
+			.bk{
+				background: darkcyan;
+			}
+			.bc{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="firstnum" />
+			<select v-model="opt">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+			</select>
+			<input type="text" v-model="scendnum" />
+			<input type="button" @click="res" value="="/>
+			<input type="text" v-model="result" />
+		</div>
+		<div id="app1">
+			<h1 :class="['bk','bc']">123123123</h1>
+			<h1 :class="['bk',flag?'bc':'']">123123123</h1>
+			<h1 :class="['bk',{bc:true}]">123123123</h1>
+			<h1 :class="{bk:true,bc:true}">123123123</h1>
+			<h1 :style="{background:'darkcyan',color:'red'}">123123123</h1>
+			<h1 :style="[st,st1]">123123123</h1>
+		</div>
+	</body>
+	<script>
+	var vm=new Vue({
+		el:"#app",
+		data:{
+			firstnum:0,
+			scendnum:0,
+			opt:'-',
+			result:0
+		},
+		methods:{
+			res (){
+				switch(this.opt){
+					case '+':
+					this.result=parseFloat(this.firstnum).toFixed(2)+parseFloat(this.scendnum).toFixed(2);
+					break;
+					case '-':
+					this.result=parseFloat(this.firstnum).toFixed(2)-parseFloat(this.scendnum).toFixed(2);
+					break;
+					case '*':
+					this.result=parseFloat(this.firstnum).toFixed(2)*parseFloat(this.scendnum).toFixed(2);
+					break;
+					case '/':
+					this.result=parseFloat(this.firstnum).toFixed(2)/parseFloat(this.scendnum).toFixed(2);
+					break;
+				}
+			}
+		}
+	})
+	var vm=new Vue({
+		el:"#app1",
+		data:{
+			flag:false,
+			st:{background:'darkcyan',color:'red'},
+			st1:{fontWeight:'200'}
+		}
+	})
+	</script>
+</html>

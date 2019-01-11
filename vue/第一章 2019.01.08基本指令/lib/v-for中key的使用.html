@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+		<title>v-for中key的使用</title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="id"/>
+			<input type="text" v-model="name"/>
+			<input type="text" v-model="blon"/>
+			<input type="button" @click="add" value="增加"/>
+			<!--在v-for中使用key的时候必须用v-bind属性绑定的形式制定key的值-->
+			<!--key属性只能使用number获取字符串-->
+			<!--在v-for循环的时候或者一些特殊情况，如果v-for有问题则必须指定唯一的字符串/数字 ：key=”值“-->
+			<p v-for="item in person" :key="item.id"><input type="checkbox" />{{item.id}}---{{item.name}}---{{item.blon}}</p>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				id:"",
+				name:"",
+				blon:"",
+				person:[
+				{id:1,name:'曹操',blon:"魏"},
+				{id:2,name:'刘备',blon:"蜀"},
+				{id:3,name:'孙权',blon:"吴"},
+				{id:4,name:'马岱',blon:"蜀"},
+				{id:5,name:'关羽',blon:"蜀"},
+				{id:6,name:'张飞',blon:"蜀"}
+				]
+			},
+			methods:{
+				add(){
+//					this.person.push({id:this.id,name:this.name,blon:this.blon})
+					this.person.unshift({id:this.id,name:this.name,blon:this.blon})
+				}
+			}
+		})
+	</script>
+</html>

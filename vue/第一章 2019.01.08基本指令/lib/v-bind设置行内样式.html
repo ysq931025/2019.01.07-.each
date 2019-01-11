@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+		<title>行内样式</title>
+	</head>
+	<body>
+		<div id="app">
+			<!--行内样式-->
+			<h1 :style="{background:'yellowgreen',color:'red'}">45345</h1>
+			<!--data中的数据绑定-->
+			<!--<h1 v-bind:style="[st1,st2]">sdfasdf </h1>-->
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				st1:{background:'yellowgreen'},
+				st2:{color:'red'}
+			}
+		})
+	</script>
+</html>

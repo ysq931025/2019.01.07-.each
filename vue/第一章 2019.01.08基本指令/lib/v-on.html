@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<input type="button" value="按钮"  title="123" v-on:click="pp"  v-bind:title="msg" v-on:mouseover="show2" />
+	</div>
+</body>
+<script>
+	new Vue({
+		el:'#app',
+		data:{
+			msg:'这是以一个练习'
+		},
+		methods:{
+			show:function(){
+				alert(111)
+			},
+			show2:function(){
+				alert(222)
+			}
+		}
+	})
+</script>
+</html>

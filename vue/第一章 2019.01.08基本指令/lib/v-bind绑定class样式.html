@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+		<title>class绑定属性</title>
+	</head>
+	<style>
+		.ground{
+			background: yellowgreen;
+		}
+		.fontstyle{
+			color: red;
+		}
+		.space{
+			letter-spacing: 0.5em;
+		}
+		.italic{
+			font-style: italic;
+		}
+	</style>
+	<body>
+		<div id="app">
+		<!--常规-->
+		<!--<h1 class='ground fontstyle space italic'>这是一个很寂寞的天，下着有些伤心的雨</h1>-->
+		
+			<!--数组形式-->
+			<!--<h1 v-bind:class="['ground','fontstyle','space','italic']">这是一个很寂寞的天，下着有些伤心的雨</h1>-->
+			
+			<!--数组加三元表达式-->
+			<!--<h1 v-bind:class="['ground','fontstyle','space',flag?'italic':'']">这是一个很寂寞的天，下着有些伤心的雨</h1>
+			<!--数组中用对象代替三元表达式-->
+			<!--<h1 v-bind:class="['ground','fontstyle','space',{'italic':true}]">这是一个很寂寞的天，下着有些伤心的雨</h1>-->
+			<!--对象-->
+			<!--<h1 v-bind:class="{ground:true,fontstyle:true,space:true,italic:true}">这是一个很寂寞的天，下着有些伤心的雨</h1>-->
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				flag:false
+			}
+		})
+	</script>
+</html>

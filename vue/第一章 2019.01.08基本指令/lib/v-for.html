@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+		<title>v-for</title>
+	</head>
+	<body>
+		<div id="app">
+			<!--循环数组-->
+			<!--<div v-for="item in list">{{item}}</div>-->
+			<!--<div v-for="(item,i) in list">值-{{item}}索引-{{i}}</div>-->
+			<!--迭代数字,注意迭代数字的时候数字是从1开始-->
+			<div v-for="item in 10">{{item}}</div>
+			<!--循环数组对象-->
+			<!--<div v-for="(item,i) in lista">id-{{item.id}}名称-{{item.name}}性别-{{item.sex}}索引-{{i}}</div>-->
+			<!--循环对象-->
+			<!--<div v-for="(val,key,i) in listb">值{{val}}键{{key}}索引{{i}}</div>-->
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				list:[1,2,3,4],
+				lista:[
+				{id:1,name:'刘兴',sex:'男'},
+				{id:2,name:'圆圆',sex:'女'},
+				{id:3,name:'广哥',sex:'男'},
+				]
+//				listb:{
+//					id:1,
+//					name:'刘兴',
+//					sex:'男'
+//				}
+			}
+		})
+	</script>
+</html>

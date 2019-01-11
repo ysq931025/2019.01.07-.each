@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<script src="../../第一章 2019.01.08/code/lib/vue.js"></script>
+	<title>跑马灯效果</title>
+</head>
+<body>
+	<div id='app'>
+		<input type="button" value="小猪快跑" @click="run" />
+		<input type="button" value='别跑' @touchmove="stop"/>
+		<p>{{msg}}</p>
+	</div>
+</body>
+<script>
+	var vm=new Vue({
+		el:'#app',
+		data:{
+			msg:'小猪快跑~~~',
+			setIntervalid:null
+		},
+		//在methods中要想获取到data中的数据 必须调用this.属性名或者this.方法命来获取；这里的this表示vm所定义的实例对象
+		methods:{
+			run(){
+////				this指向
+//				var that=this;
+//				setInterval(function(){
+////					截取第一个字符
+//				var start=that.msg.substring(0,1);
+////				截取之后的字符
+//				var end=that.msg.substring(1);
+//				console.log(end)
+////				重新拼接后的字符
+//				that.msg=end+start;
+//				},400)
+				
+//				es6中解决this指向问题
+				if(this.setIntervalid !=null){return};
+				this.setIntervalid=setInterval(()=>{
+					var start=this.msg.substring(0,1);
+					var end=this.msg.substring(1);
+					this.msg=end+start;
+				},400)
+				
+				
+			},
+			stop(){
+//				alert(1)
+				clearInterval(this.setIntervalid);
+				this.setIntervalid=null;
+			}
+		}
+	})
+</script>
+</html>

@@ -1,0 +1,8 @@
+1.stop用于阻值事件冒泡（@click.stop）
+2.prevent用于阻值浏览器默认事件(@clicik.prevent 例如a链接herf会默认打开新的的网页，加上就不会打开)
+3.capture事件捕获事件（@click.capture 例如：事件冒泡机制在冒泡事件位置上加.capture就会先执行加了.capture的事件
+4.self 只有点击本身的时候才会执行 冒泡和捕获不会执行
+5.once 事件只执行一次
+
+6stop跟self都可以阻值时间冒泡行为，有什么区别
+	stop阻值之后所有的冒泡，而self只阻值本身的冒泡

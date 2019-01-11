@@ -1,0 +1,8 @@
+1.数组形式   v-bind:class="['ground','fontstyle','space','italic']"
+2.数组加三元表达式  v-bind:class="['ground','fontstyle','space',flag?'italic':'']"
+3.数组加对象 v-bind:class="['ground','fontstyle','space',{'italic':true}]"
+4.对象 v-bind:class="{ground:true,fontstyle:true,space:true,italic:true}"
+
+绑定行内样式
+1.:style="{background:'darkcyan',color:'red'}"
+2.:style="[st,st1]"此处 st st1都是在date中定义的st:{background:'darkcyan',color:'red'},st1:{fontWeight:'200'}
